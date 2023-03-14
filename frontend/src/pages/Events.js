@@ -8,9 +8,7 @@ function EventsPage() {
 
   return (
     <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
-      <Await resolve={events}>
-        {(loadedEvents) => <EventsList events={loadedEvents} />}
-      </Await>
+      <Await resolve={events}>{(loadedEvents) => <EventsList events={loadedEvents} />}</Await>
     </Suspense>
   );
 }
