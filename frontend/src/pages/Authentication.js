@@ -9,7 +9,7 @@ export default AuthenticationPage;
 
 export async function action({ request }) {
   const searchParams = new URL(request.url).searchParams;
-  const mode = searchParams.get('mode') || 'login';
+  const mode = searchParams.get('mode') || 'login'; //if there's no mode queryParam
 
   // if mode is something else
   if (mode !== 'login' && mode !== 'signup') {
