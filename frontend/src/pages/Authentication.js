@@ -43,5 +43,10 @@ export async function action({ request }) {
 
   localStorage.setItem('token', token);
 
+  // Set the expiration date of the token
+  const expiration = new Date();
+  expiration.setHours(expiration.getHours() + 1); // a date 1 hours in the future, this is just vanilla JS
+  localStorage.setItem('expiration', expiration.toISOString()); // localStorage only stores values as Strings
+
   return redirect('/');
 }
