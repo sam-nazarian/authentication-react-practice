@@ -1,11 +1,12 @@
-import { Form, NavLink, useRouteLoaderData } from 'react-router-dom';
+import { Form, NavLink, useLoaderData } from 'react-router-dom'; //useRouteLoaderData
 
 import classes from './MainNavigation.module.css';
 import NewsletterSignup from './NewsletterSignup';
 
 function MainNavigation() {
   // when the page changes this loader is re-runs
-  const token = useRouteLoaderData('root');
+  const token = useLoaderData(); //this works as the loader & elm are on the same route path
+  // const token = useRouteLoaderData('root'); //this also works
 
   return (
     <header className={classes.header}>
